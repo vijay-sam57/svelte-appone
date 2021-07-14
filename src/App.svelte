@@ -6,7 +6,8 @@
   // const theme = "blk";
   // const size = "med";
   // const finished = true;
-  let age = 17;
+  const myfav = ["Asta", "Yuno", "Noelle"];
+  const hate = [];
 </script>
 
 <main>
@@ -16,13 +17,16 @@
   <button {disabled}>this a button</button>
   <h2 class={(finished ? "finished" : "", theme)}>This is for class binding</h2>
   <h2 class={size}>This is for class binding</h2> -->
-  {#if age >= 18}
-    <h3>You are eligible to vote</h3>
-  {:else if age === 17}
-    <h3>Dont worry you can vote in a year</h3>
+  <h3>My fav characters in Black Clover</h3>
+  {#each myfav as item, no}
+    <strong>{no + 1}.{item}</strong>
+    <br />
+  {/each}
+  {#each hate as it}
+    {it}
   {:else}
-    <h3>You are not elgible to vote</h3>
-  {/if}
+    <h3>I dont hate any characters</h3>
+  {/each}
 </main>
 
 <style>
